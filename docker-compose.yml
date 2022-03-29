@@ -1,0 +1,18 @@
+version: "3.7"
+
+services:
+  mine:
+    image: dever4eg/minecraft-iia:latest
+    network_mode: host
+    volumes:
+      - ./ops.json:/mine/ops.json
+      - ./devnull:/mine/devnull
+      - ./dynmap:/mine/dynmap
+
+  backup:
+    build: backup-service
+    volumes:
+      - ./devnull:/var/devnull
+      - ./backups:/var/backups
+    env_file:
+      - .env
