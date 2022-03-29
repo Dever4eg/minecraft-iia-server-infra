@@ -3,3 +3,4 @@ devnull
 dynmap
 .env
 .idea
+docker-compose.yml.override
